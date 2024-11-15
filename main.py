@@ -11,6 +11,7 @@ import tempfile
 import io
 import json
 
+st.cache_data.clear()
 load_dotenv()
 
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
@@ -223,10 +224,15 @@ st.html(
 
 
 pg = st.navigation([
-    st.Page("pages/Home.py", title="HOME SCREEN", icon="🏠"),
+    st.Page("pages/Home.py", title="HOME", icon="🏠"),
     st.Page("pages/Wardrobe.py", title="WARDROBE", icon="🚪"),
     st.Page("pages/Wishlist.py", title="WISHLIST", icon="🛍️"),
     st.Page("pages/About Us.py", title="ABOUT US", icon="💁"),
     st.Page("pages/Contact Us.py", title="CUSTOMER SERVICE", icon="🆘"),
 ])
+st.cache_data.clear()
+st.cache_resource.clear()
 pg.run()
+
+st.cache_data.clear()
+st.cache_resource.clear()
