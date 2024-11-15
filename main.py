@@ -9,12 +9,10 @@ import numpy as np
 import base64
 import tempfile
 import io
-import google.generativeai as genai
 import json
 
 load_dotenv()
 
-genai.configure(api_key= os.environ.get('GOOGLE_API_KEY'))
 client = OpenAI(api_key=os.environ.get('OPENAI_API_KEY'))
 weatherbit_api_key = os.environ.get('WEATHERBIT_API_KEY')
 
