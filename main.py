@@ -102,22 +102,28 @@ def recommender(wardrobe, occassion,temperature,weather_description,model):
     messages=[
         {
             "role": "system",
-            "content": """You are a detailed wardrobe advisor. Your job is to recommend outfits from a person's wardrobe collection based on the occasion. Please focus only on the clothing items (top, middle, bottom). The result should not contain any accessories.
-                        When recommending outfits, consider the 'type', 'color', 'material', and 'description' of the clothing.
-                        For the given occasion, suggest the most appropriate combination of clothing items that would fit well together for the event."""
+        #   "content": """
+        #   You are a detailed wardrobe advisor. Your job is to recommend outfits from a person's wardrobe collection based on the occasion. Please focus only on the clothing items (top, middle, bottom). The result should not contain any accessories.
+        #                 When recommending outfits, consider the 'type', 'color', 'material', and 'description' of the clothing.
+        #                 For the given occasion, suggest the most appropriate combination of clothing items that would fit well together for the event.
+        #                 """
+        "content": """
+        You are a facial analyzer. Your job is to analyze the face, skin tone, facial structure, eyes, nose, etc, in the picture. You should output a facial rating with detailed description and compare it to model looking face.
+               """
         },
         {
             "role": "user",
-            "content": [
-                {"type":"text","text":"""Below is a person's full wardrobe collection. 
-                Based on this collection, please recommend a suitable outfit for the occasion of """ + occassion + 
-                f""" The current weather conditions are:
-                - Temperature: {temperature}°C
-                - Weather description: {weather_description}.
-                Provide detailed advice on how to dress appropriately for this occasion and weather."""},
-                # {"type":"text","text":"Below is a person's full wardrobe collection. Tell me details of every clothes."},
-                {"type":"text", "text": wardrobe},
-            ],
+            "content": "Analyze the face picture and give us description. "
+            # [
+            #     {"type":"text","text":"""Below is a person's full wardrobe collection. 
+            #     Based on this collection, please recommend a suitable outfit for the occasion of """ + occassion + 
+            #     f""" The current weather conditions are:
+            #     - Temperature: {temperature}°C
+            #     - Weather description: {weather_description}.
+            #     Provide detailed advice on how to dress appropriately for this occasion and weather."""},
+            #     # {"type":"text","text":"Below is a person's full wardrobe collection. Tell me details of every clothes."},
+            #     {"type":"text", "text": wardrobe},
+            # ],
         },
     ],
     max_tokens = 750,
