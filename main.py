@@ -95,7 +95,7 @@ def describe_wardrobe(wardrobe,client):
     result = response.choices[0].message.content
     return result
 
-def recommender(wardrobe, occassion,temperature,weather_description,model):
+def recommender(model,base64_image):
     client = model
     response = client.chat.completions.create(
     model="gpt-4o-mini",
@@ -113,7 +113,12 @@ def recommender(wardrobe, occassion,temperature,weather_description,model):
         },
         {
             "role": "user",
-            "content": "Analyze the face picture and give us description. "
+            "content": [
+                {"type":"text","text":"Analyze the face picture and give us description."},
+                {"type":"image_url",
+                 "image_url":{"url":f"data:image/png;base64,{base64_image}"
+                },}
+            ]
             # [
             #     {"type":"text","text":"""Below is a person's full wardrobe collection. 
             #     Based on this collection, please recommend a suitable outfit for the occasion of """ + occassion + 

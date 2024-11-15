@@ -106,10 +106,10 @@ with st.container():
                     temp_image.write(base64.b64decode(img_base64))
                     temp_image.flush()
             if img_base64 is not None:
-                current_fit = m.check_fit(img_base64,client)
+                exp = m.recommender(client,img_base64)
 
-                m.store_fit(current_fit)
-                st.write("Added successfully!")
+                
+                st.write(exp)
 
     # store_fit(current_fit)
 
