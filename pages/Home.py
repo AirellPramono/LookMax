@@ -106,10 +106,10 @@ with st.container():
                     temp_image.write(base64.b64decode(img_base64))
                     temp_image.flush()
             if img_base64 is not None:
-                exp = m.recommender(client,img_base64)
+                current_fit = m.check_fit(img_base64,client)
 
-                
-                st.write(exp)
+                m.store_fit(current_fit)
+                st.write("Added successfully!")
 
     # store_fit(current_fit)
 
@@ -130,7 +130,7 @@ with st.container():
                     data_list = json.load(json_file)
                     dl_asstring = str(data_list)
                     print(data_list)
-                    # recommendation = m.recommender(dl_asstring, occassion,temperature,weather_description,client)
+                    recommendation = m.recommender(dl_asstring, occassion,temperature,weather_description,client)
     if recommendation is not None:
         st.write(recommendation)
         with open('wishlist.json', 'w') as json_file:
