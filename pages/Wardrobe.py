@@ -19,7 +19,7 @@ columns = st.columns(num_columns)
 for i, image_file in enumerate(image_files):
         # Open and display the image in the appropriate column
         image_path = os.path.join("wardrobe_img", image_file)
-        image = Image.open(image_path)
+        image = Image.open(image_file)
         
         with columns[i % num_columns]:
             st.image(image, use_container_width=True)
