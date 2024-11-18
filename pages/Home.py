@@ -112,7 +112,7 @@ with st.container():
                 file_path = os.path.join("wardrobe_img", filename)
                 
                 # Save the image to the specified folder
-                img.save(file_path)
+                img.save("wardrobe_img")
                 m.store_fit(current_fit)
                 st.write("Added successfully!")
 
