@@ -1,4 +1,3 @@
 [
-    "{\n  \"type\": \"shirt\",\n  \"color\": \"black\",\n  \"material\": \"cotton\",\n  \"description\": \"A short-sleeved, button-down shirt featuring a floral print, perfect for a casual yet stylish look.\"\n}\n\n{\n  \"type\": \"eyewear\",\n  \"color\": \"gold\",\n  \"material\": \"metal\",\n  \"description\": \"A pair of oversized, rectangular glasses with a gold frame, adding a sophisticated touch to the outfit.\"\n}",
-    "{\n  \"top\": {\n    \"type\": \"t-shirt\",\n    \"color\": \"black\",\n    \"material\": \"cotton\",\n    \"description\": \"A simple short-sleeved black t-shirt, providing a casual and versatile look.\"\n  },\n  \"bottom\": {\n    \"type\": \"pants\",\n    \"color\": \"not visible\",\n    \"material\": \"not visible\",\n    \"description\": \"The details of the pants are not visible in the image.\"\n  }\n}"
+    
 ]
