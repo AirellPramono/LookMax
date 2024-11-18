@@ -109,10 +109,10 @@ with st.container():
                 current_fit = m.check_fit(img_base64,client)
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 filename = f"captured_image_{timestamp}.png"
-                file_path = os.path.join("wardrobe_img", filename)
+                file_path = os.path.join("./wardrobe_img", filename)
                 
                 # Save the image to the specified folder
-                img.save(filename)
+                img.save(file_path)
                 m.store_fit(current_fit)
                 st.write("Added successfully!")
 
