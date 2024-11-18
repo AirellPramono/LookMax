@@ -11,7 +11,7 @@ weatherbit_api_key = os.environ.get('WEATHERBIT_API_KEY')
 
 st.title("Wardrobe")
 
-image_files = [f for f in os.listdir("") if f.startswith(('captured'))]
+image_files = [f for f in os.listdir("/") if f.startswith(('captured'))]
 
 num_columns = 3  # Define how many images per row
 columns = st.columns(num_columns)
