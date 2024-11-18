@@ -48,7 +48,7 @@ with col1:
     st.image("ahmad.png", caption="MUHAMMAD AHMAD", width=150)
 
 with col2:
-    st.image("arell.png", caption="AIRELL PRAMINO", width=150)
+    st.image("arell.png", caption="MUHAMMAD AIRELL", width=150)
 
 with col3:
     st.image("kean.png", caption="CHAN MIN HAN", width=150)

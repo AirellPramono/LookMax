@@ -107,7 +107,12 @@ with st.container():
                     temp_image.flush()
             if img_base64 is not None:
                 current_fit = m.check_fit(img_base64,client)
-
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                filename = f"captured_image_{timestamp}.png"
+                file_path = os.path.join("wardrobe_img", filename)
+                
+                # Save the image to the specified folder
+                img.save(file_path)
                 m.store_fit(current_fit)
                 st.write("Added successfully!")
 
@@ -129,7 +134,6 @@ with st.container():
                 with open("data.json", 'r') as json_file:
                     data_list = json.load(json_file)
                     dl_asstring = str(data_list)
-                    print(data_list)
                     recommendation = m.recommender(dl_asstring, occassion,temperature,weather_description,client)
     if recommendation is not None:
         st.write(recommendation)

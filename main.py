@@ -77,7 +77,7 @@ def describe_wardrobe(wardrobe,client):
         {
             "role": "system",
             "content": """You are a detailed wardrobe advisor.
-
+            Your job is to describe the wardrobe as presented in the file. But if the wardrobe contains nothing, then just output that Your wardrobe is still empty.
    
             """,
         },
